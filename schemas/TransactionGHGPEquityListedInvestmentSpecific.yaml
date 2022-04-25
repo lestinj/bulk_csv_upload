@@ -1,0 +1,342 @@
+title: GHGP Equity Listed - Investment Specific
+x-persefoni-imports-emitter:
+  x-func: EmitTransaction
+x-persefoni-imports-job-types:
+  x-jobTypes:
+  - GHGP_EQUITY_LISTED_INVESTMENT_SPECIFIC_BASED
+type: object
+properties:
+  activity_quantity:
+    format: float
+    type: number
+    x-persefoni-imports:
+      column_name: EquitySharePercentage
+      job_column_mapping: Equity Share Percentage*
+      order: 5
+  calculation_method_id:
+    enum:
+    - INVESTMENT_SPECIFIC
+    type: string
+    x-persefoni-imports:
+      no_mapping: true
+      value_from:
+        x-func: getCalculationMethodID
+  carbon_equivalent_scope_one:
+    format: float
+    type: number
+    x-persefoni-imports:
+      column_name: Scope1Amount
+      job_column_mapping: Scope 1 Amount*
+      order: 8
+  carbon_equivalent_scope_one_uom_id:
+    description: Options can be sourced from pick-list /v1/pick-list-options/carbon_equivalent_scope_one_uom
+    enum:
+    - EXAGRAM_EG
+    - EXATONNE_ET
+    - GIGAGRAM_GG
+    - GIGATONNE_GT
+    - MEGAGRAM_MG
+    - MEGATONNE_MT
+    - PETAGRAM_PG
+    - PETATONNE_PT
+    - TERAGRAM_TG
+    - TERATONNE_TT
+    - YOTTAGRAM_YG
+    - ZETTAGRAM_ZG
+    - ATTOGRAM_AG
+    - CENTIGRAM_CG
+    - CENTAL_HUNDREDWEIGHT_CWT
+    - DECAGRAM_DAG
+    - DECIGRAM_DG
+    - AVOIRDUPOIS_DRAM_DR
+    - FEMTOGRAM_FG
+    - GRAM_G
+    - TROY_GRAIN_GR
+    - HECTOGRAM_HG
+    - IMPERIAL_HUNDREDWEIGHT_IMPERIAL_CWT
+    - KILOGRAM_KG
+    - KILOTONNE_KT
+    - AVOIRDUPOIS_POUND_LB
+    - TROY_POUND_LB_T
+    - LONG_HUNDREDWEIGHT_LONG_CWT
+    - MILLIGRAM_MG
+    - NANOGRAM_NG
+    - AVOIRDUPOIS_OUNCE_OZ
+    - TROY_OUNCE_OZ_T
+    - PICOGRAM_PG
+    - SHORT_TON_SH
+    - SHORT_HUNDREDWEIGHT_SHORT_CWT
+    - UK_STONE_ST
+    - METRIC_TONNE_T
+    - US_TON_TN
+    - YOCTOGRAM_YG
+    - ZEPTOGRAM_ZG
+    - MICROGRAM_G
+    type: string
+    x-persefoni-imports:
+      column_name: Scope1UOM
+      job_column_mapping: Scope 1 UOM*
+      order: 9
+      value_from:
+        params:
+          clean: false
+          columns:
+          - unit_abbreviation
+          - unit_name
+          table: units
+        x-func: getMatchbackMapTwo
+  carbon_equivalent_scope_three:
+    format: float
+    type: number
+    x-persefoni-imports:
+      column_name: Scope3Amount
+      job_column_mapping: Scope 3 Amount*
+      order: 12
+  carbon_equivalent_scope_three_uom_id:
+    description: Options can be sourced from pick-list /v1/pick-list-options/carbon_equivalent_scope_three_uom
+    enum:
+    - EXAGRAM_EG
+    - EXATONNE_ET
+    - GIGAGRAM_GG
+    - GIGATONNE_GT
+    - MEGAGRAM_MG
+    - MEGATONNE_MT
+    - PETAGRAM_PG
+    - PETATONNE_PT
+    - TERAGRAM_TG
+    - TERATONNE_TT
+    - YOTTAGRAM_YG
+    - ZETTAGRAM_ZG
+    - ATTOGRAM_AG
+    - CENTIGRAM_CG
+    - CENTAL_HUNDREDWEIGHT_CWT
+    - DECAGRAM_DAG
+    - DECIGRAM_DG
+    - AVOIRDUPOIS_DRAM_DR
+    - FEMTOGRAM_FG
+    - GRAM_G
+    - TROY_GRAIN_GR
+    - HECTOGRAM_HG
+    - IMPERIAL_HUNDREDWEIGHT_IMPERIAL_CWT
+    - KILOGRAM_KG
+    - KILOTONNE_KT
+    - AVOIRDUPOIS_POUND_LB
+    - TROY_POUND_LB_T
+    - LONG_HUNDREDWEIGHT_LONG_CWT
+    - MILLIGRAM_MG
+    - NANOGRAM_NG
+    - AVOIRDUPOIS_OUNCE_OZ
+    - TROY_OUNCE_OZ_T
+    - PICOGRAM_PG
+    - SHORT_TON_SH
+    - SHORT_HUNDREDWEIGHT_SHORT_CWT
+    - UK_STONE_ST
+    - METRIC_TONNE_T
+    - US_TON_TN
+    - YOCTOGRAM_YG
+    - ZEPTOGRAM_ZG
+    - MICROGRAM_G
+    type: string
+    x-persefoni-imports:
+      column_name: Scope3UOM
+      job_column_mapping: Scope 3 UOM*
+      order: 13
+      value_from:
+        params:
+          clean: false
+          columns:
+          - unit_abbreviation
+          - unit_name
+          table: units
+        x-func: getMatchbackMapTwo
+  carbon_equivalent_scope_two:
+    format: float
+    type: number
+    x-persefoni-imports:
+      column_name: Scope2Amount
+      job_column_mapping: Scope 2 Amount*
+      order: 10
+  carbon_equivalent_scope_two_uom_id:
+    description: Options can be sourced from pick-list /v1/pick-list-options/carbon_equivalent_scope_two_uom
+    enum:
+    - EXAGRAM_EG
+    - EXATONNE_ET
+    - GIGAGRAM_GG
+    - GIGATONNE_GT
+    - MEGAGRAM_MG
+    - MEGATONNE_MT
+    - PETAGRAM_PG
+    - PETATONNE_PT
+    - TERAGRAM_TG
+    - TERATONNE_TT
+    - YOTTAGRAM_YG
+    - ZETTAGRAM_ZG
+    - ATTOGRAM_AG
+    - CENTIGRAM_CG
+    - CENTAL_HUNDREDWEIGHT_CWT
+    - DECAGRAM_DAG
+    - DECIGRAM_DG
+    - AVOIRDUPOIS_DRAM_DR
+    - FEMTOGRAM_FG
+    - GRAM_G
+    - TROY_GRAIN_GR
+    - HECTOGRAM_HG
+    - IMPERIAL_HUNDREDWEIGHT_IMPERIAL_CWT
+    - KILOGRAM_KG
+    - KILOTONNE_KT
+    - AVOIRDUPOIS_POUND_LB
+    - TROY_POUND_LB_T
+    - LONG_HUNDREDWEIGHT_LONG_CWT
+    - MILLIGRAM_MG
+    - NANOGRAM_NG
+    - AVOIRDUPOIS_OUNCE_OZ
+    - TROY_OUNCE_OZ_T
+    - PICOGRAM_PG
+    - SHORT_TON_SH
+    - SHORT_HUNDREDWEIGHT_SHORT_CWT
+    - UK_STONE_ST
+    - METRIC_TONNE_T
+    - US_TON_TN
+    - YOCTOGRAM_YG
+    - ZEPTOGRAM_ZG
+    - MICROGRAM_G
+    type: string
+    x-persefoni-imports:
+      column_name: Scope2UOM
+      job_column_mapping: Scope 2 UOM*
+      order: 11
+      value_from:
+        params:
+          clean: false
+          columns:
+          - unit_abbreviation
+          - unit_name
+          table: units
+        x-func: getMatchbackMapTwo
+  comments:
+    type: string
+    x-persefoni-imports:
+      column_name: Comments
+      job_column_mapping: Comments
+      order: 14
+  divestiture_date:
+    format: date-time
+    type: string
+    x-persefoni-imports:
+      column_name: DivestitureDate
+      job_column_mapping: Divestiture Date
+      order: 7
+      transform:
+        type: SystemDate
+  emission_factor_set_id:
+    description: Options can be sourced from pick-list /v1/pick-list-options/emission_factor_set_eeio_fund_company/{fund_company_id}
+    enum:
+    - bv8qll3pc98m3uub41hg
+    - c2lskk8m35k0pmordrhg
+    type: string
+    x-persefoni-imports:
+      clean_value: true
+      column_name: EmissionFactorSet
+      job_column_mapping: Emission Factor Set
+      order: 16
+      value_from:
+        params:
+          clean: true
+          columns:
+          - emission_factor_set_name
+          table: emission_factor_sets
+        x-func: getMatchbackMap
+  emissions_calculation_framework_id:
+    description: Options can be sourced from pick-list /v1/pick-list-options/emissions_calculation_framework/{emissions_source_id}
+    enum:
+    - EQUITY_LISTED_GREENHOUSE_GAS_PROTOCOL
+    - EQUITY_LISTED_PARTNERSHIP_FOR_CARBON_ACCOUNTING_FINANCIALS
+    type: string
+    x-persefoni-imports:
+      no_mapping: true
+      value_from:
+        x-func: getCalculationFrameworkID
+  emissions_source_id:
+    enum:
+    - EQUITY_LISTED_CATEGORY_15
+    type: string
+    x-persefoni-imports:
+      no_mapping: true
+      value_from:
+        x-func: getEmissionsSourceID
+  fund_company_id:
+    description: Options can be sourced from pick-list /v1/pick-list-options/accounts/:accountID/listed_fund_companies
+    type: string
+    x-persefoni-imports:
+      clean_value: true
+      column_name: FinancedEntity
+      job_column_mapping: Financed Entity*
+      order: 4
+      value_from:
+        params:
+          clean: true
+          columns:
+          - fund_name
+          table: fund_companies
+        x-func: getMatchbackMapAccount
+  gwp_set_id:
+    description: Options can be sourced from pick-list /v1/pick-list-options/gwp_set
+    enum:
+    - IPCC_FOURTH_ASSESSMENT_REPORT_AR4
+    type: string
+    x-persefoni-imports:
+      clean_value: true
+      column_name: GlobalWarmingPotentialSet
+      job_column_mapping: Global Warming Potential Set
+      order: 15
+      value_from:
+        params:
+          clean: true
+          columns:
+          - gwp_set_name
+          table: gwp_sets
+        x-func: getMatchbackMap
+  original_investment_date:
+    format: date-time
+    type: string
+    x-persefoni-imports:
+      column_name: OriginalInvestmentDate
+      job_column_mapping: Original Investment Date
+      order: 6
+      transform:
+        type: SystemDate
+  report_end_date:
+    description: Options can be sourced from pick-list /v1/
+    format: date-time
+    type: string
+    x-persefoni-imports:
+      column_name: ActivityEndDate
+      job_column_mapping: Activity End Date*
+      order: 3
+      transform:
+        type: SystemDate
+  report_start_date:
+    description: Options can be sourced from pick-list /v1/
+    format: date-time
+    type: string
+    x-persefoni-imports:
+      column_name: ActivityStartDate
+      job_column_mapping: Activity Start Date*
+      order: 2
+      transform:
+        type: SystemDate
+  resource_group_id:
+    description: Options can be sourced from pick-list /v1/pick-list-options/accounts/:accountID/resource_group
+    type: string
+    x-persefoni-imports:
+      clean_value: true
+      column_name: Entity
+      job_column_mapping: Entity*
+      order: 1
+      value_from:
+        params:
+          clean: true
+          columns:
+          - resource_group_name
+          table: resource_groups
+        x-func: getMatchbackMapAccount
